@@ -1,11 +1,12 @@
 import mongoose  from "mongoose";
-import { nanoid } from "nanoid";
+import TrackModel, { TrackDocument } from "./track.model";
 import { UserDocument } from "./user.model";
 
 
 export interface PlaylistInput {
     user: UserDocument["_id"];
     name: string;
+    tracks: TrackDocument[];
     creator: string;
     playtime: number;
 }
@@ -23,6 +24,7 @@ const playlistSchema = new mongoose.Schema({
       },
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     name: {type: String, required: true},
+    tracks: { type: mongoose.Schema.Types.ObjectId, ref: "Track" },
     creator: {type: String, required: true},
     playtime: {type: Number, required: true},
 },{

@@ -18,7 +18,10 @@ export async function createPlaylistHandler(
 
   const body = req.body;
 
-  const playlist = await createPlaylist({ ...body, user: userId });
+  const playlist = await createPlaylist({
+    ...body, user: userId,
+    tracks: []
+  });
 
   return res.send(playlist);
 }
