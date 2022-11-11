@@ -23,6 +23,8 @@
     "nanoid": "^4.0.0",
     "pino": "^8.7.0",
     "pino-pretty": "^9.1.1",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.6.0",
     "touch": "^3.1.0",
     "ts-node-dev": "^2.0.0",
     "yup": "^0.32.11",
