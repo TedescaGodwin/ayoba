@@ -1,6 +1,6 @@
-import { number, object, string } from "zod";
+import { number, object, string, TypeOf } from "zod";
 
-export const createTrackSchema = object({
+const payload = {
   body: object({
         name: string({
         required_error: "Name is required",
@@ -21,4 +21,35 @@ export const createTrackSchema = object({
         required_error: "Audio is required",
       }),
   }),
+};
+
+
+const params = {
+  params: object({
+    trackId: string({
+      required_error: "trackId is required",
+    }),
+  }),
+};
+
+export const createTrackSchema = object({
+  ...payload,
 });
+
+export const updateTrackSchema  = object({
+  ...payload,
+  ...params,
+});
+
+export const deleteTrackSchema  = object({
+  ...params,
+});
+
+export const getTrackSchema  = object({
+  ...params,
+});
+
+export type CreateTrackInput = TypeOf<typeof createTrackSchema>;
+export type UpdateTrackInput = TypeOf<typeof updateTrackSchema>;
+export type ReadTrackInput = TypeOf<typeof getTrackSchema>;
+export type DeleteTrackInput = TypeOf<typeof deleteTrackSchema>;

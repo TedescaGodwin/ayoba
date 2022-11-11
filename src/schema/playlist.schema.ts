@@ -39,7 +39,7 @@ const params = {
     ...params,
   });
   
-  export type CreatePlaylistInput = TypeOf<typeof createPlaylistSchema >;
-  export type UpdatePlaylistInput = TypeOf<typeof updatePlaylistSchema >;
-  export type ReadPlaylistInput = TypeOf<typeof getPlaylistSchema >;
-  export type DeletePlaylistInput = TypeOf<typeof deletePlaylistSchema >;
+  export type CreatePlaylistInput = TypeOf<typeof createPlaylistSchema>;
+  export type UpdatePlaylistInput = TypeOf<typeof updatePlaylistSchema>;
+  export type ReadPlaylistInput = TypeOf<typeof getPlaylistSchema>;
+  export type DeletePlaylistInput = TypeOf<typeof deletePlaylistSchema>;
